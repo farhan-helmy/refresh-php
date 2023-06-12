@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    if (empty(trim($_POST['addesss']))) {
+    if (empty(trim($_POST['address']))) {
         $address_err = "Please enter an address.";
     } else {
         $address = trim($_POST['address']);

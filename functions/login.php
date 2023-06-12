@@ -14,7 +14,8 @@ function login($email, $password, $connection){
         if (mysqli_num_rows($result) == 1) {
             // Email exists, now verify the password
             $user = mysqli_fetch_assoc($result);
-            if (password_verify($password, $user['password'])) {
+
+            if ($password === $user['password']) {
                 // Password verified, set the session variables
                 $_SESSION['id'] = $user['id'];
                 $_SESSION['email'] = $user['email'];
